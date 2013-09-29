@@ -19,7 +19,7 @@ include("header.php");
             </div>
             <div class="col-sm-6">
 
-                <div id="galleria" class="galleria">
+                <div id="galleria" style="max-width:440px; height:330px;">
 
                     <?php
                     $gallery = array(
@@ -44,8 +44,9 @@ include("header.php");
 
                 <br><br>
 
-                <iframe width="440" height="315" src="//www.youtube.com/embed/n2s5ev0i8tM" frameborder="0" allowfullscreen></iframe>
-
+                <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+                    <iframe width="440" height="330" src="//www.youtube.com/embed/n2s5ev0i8tM" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>

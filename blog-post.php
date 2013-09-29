@@ -50,17 +50,14 @@ include("header.php");
 
                 if (!is_empty($qdc['gallery_id']) && is_empty($qdc['video_id'])) { ?>
 
-                    <div id="galleria" class="post_pic" style="width:617px; height:387px;">
+                    <div id="galleria" style="max-width:617px; height:387px;">
 
                         <?php
                         $_dbq = db_query("SELECT * FROM upload WHERE gallery_id = '".$qdc['gallery_id']."'");
                         while($dbq = db_fetch_assoc($_dbq)){ ?>
 
                             <a href="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
-                                <img
-                                    title=""
-                                    alt=""
-                                    src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
+                                <img title="" alt="" src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
                             </a>
 
                         <?php } ?>

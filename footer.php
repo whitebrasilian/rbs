@@ -4,16 +4,22 @@
             <div class="row sections">
                 <div class="col-sm-4 recent_posts">
                     <h3 class="footer_header">
-                        Recent Posts
+                        Recent Blog Posts
                     </h3>
 
                     <?php
-                    $_sec = db_query("SELECT id, title, datetime FROM blog WHERE status = 'show' ORDER BY datetime DESC limit 3");
+                    $_sec = db_query("SELECT id, title, datetime, gallery_id FROM blog WHERE status = 'show' ORDER BY datetime DESC limit 3");
                     while($sec = db_fetch_assoc($_sec)){ ?>
 
                         <div class="post">
                             <a href="<?= $CFG->host ?>/blog-post.php?p=<?= $sec['id'] ?>">
-                                <img src="img/recent_post1.png" class="img-circle" />
+
+                                <?php
+                                $_dbq = db_query("SELECT lrg_rename FROM upload WHERE gallery_id = '".$sec['gallery_id']."' ORDER BY upload_id ASC limit 1");
+                                $dbq = db_fetch_assoc($_dbq); ?>
+
+                                <img title="" alt="" src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>" style="width:55px; height:55px;" class="img-circle">
+
                             </a>
                             <div class="date">
                                 <?= formatDateLong2($sec['datetime']) ?>
@@ -33,21 +39,21 @@
                     <div class="wrapper">
                         <div class="quote">
                             <span>“</span>
-                            There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                            We had such a great time. Sit augue eu dis tortor? Cursus phasellus ultricies sit montes magna, placerat. Lectus nunc! Sit, magna integer. Placerat ac. Penatibus ac magna tempor turpis, cum elementum. 
                             <span></span>
                         </div>
                         <div class="author">
-                            <img src="img/user-display.png" />
-                            <div class="name">Alejandra Galvan Castillo</div>
+                            <img src="img/user-display.png" class="img-circle"/>
+                            <div class="name">Alejandra & Galvan Castillo</div>
                             <div class="info">
-                                Details Canvas
+                                Aug 2013
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 contact">
                     <h3 class="footer_header">
-                        Contact
+                        Contact Us
                     </h3>
                     <form action="#" method="post">
                         <input type="text" id="name" placeholder="Your Nname" />
@@ -82,9 +88,8 @@
         <!--
         // Load the classic theme
         Galleria.loadTheme('js/galleria/themes/twelve/galleria.twelve.min.js');
-        Galleria.run('#galleria', { });
+        Galleria.run('#galleria');
         //-->
-
         </script>
 
     <?php } ?>

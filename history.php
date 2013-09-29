@@ -17,7 +17,7 @@ include("header.php");
             </div>
             <div class="col-sm-6">
 
-                <div id="galleria" class="galleria">
+               <div id="galleria" style="max-width:440px; height:330px;">
 
                     <?php
                     $gallery = array(

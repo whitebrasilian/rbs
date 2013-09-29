@@ -71,32 +71,34 @@ include("header.php");
             </div>
             <div class="col-sm-6">
 
-                <div id="galleria" class="galleria">
+                     <div id="galleria" style="max-width:440px; height:330px;">
 
-                    <?php
-                    $gallery = array(
-                    'African Hornbill1.jpg',
-                    'Better writing desk in Selous1.jpg',
-                    'Giraffe heads held high1.jpg',
-                    'Guest houses at Lewa Downs1.jpg',
-                    'IMG_3602.jpeg',
-                    'IMG_3703.jpeg',
-                    'Lunch time African style1.jpg'
-                    );
+                        <?php
+                        $gallery = array(
+                        'African Hornbill1.jpg',
+                        'Better writing desk in Selous1.jpg',
+                        'Giraffe heads held high1.jpg',
+                        'Guest houses at Lewa Downs1.jpg',
+                        'IMG_3602.jpeg',
+                        'IMG_3703.jpeg',
+                        'Lunch time African style1.jpg'
+                        );
 
-                    for ($i=0; $i <count($gallery) ; $i++) { ?>
+                        for ($i=0; $i <count($gallery) ; $i++) { ?>
 
-                        <a  href="images/galleries/<?=$gallery[$i] ?>">
-                        <img src="images/galleries/<?=$gallery[$i] ?>">
-                        </a>
+                            <a href="<?= HOST ?>/images/galleries/<?=$gallery[$i] ?>">
+                                <img title="" alt="" src="<?= HOST ?>/images/galleries/<?=$gallery[$i] ?>">
+                            </a>
 
-                    <?php } ?>
+                        <?php } ?>
 
-                </div>
+                    </div>
 
                 <br><br>
 
-                <iframe width="440" height="315" src="//www.youtube.com/embed/n2s5ev0i8tM" frameborder="0" allowfullscreen></iframe>
+                <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+                    <iframe width="440" height="330" src="//www.youtube.com/embed/n2s5ev0i8tM" frameborder="0" allowfullscreen></iframe>
+                </div>
 
             </div>
         </div>

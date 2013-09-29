@@ -7,8 +7,6 @@ include("header.php");
     <div class="container">
         <div class="section_header">
             <h3>Riverbank Safaris Blog</h3>
-
-            <input type="text" class="search-query form-control" placeholder="Search">
         </div>
 
         <?php

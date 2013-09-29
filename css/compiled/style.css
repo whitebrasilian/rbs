@@ -218,14 +218,6 @@
   color: #3F3F3F;
   line-height: 24px;
 }
-#aboutus .galleria {
-  box-shadow: none;
-  margin: 0;
-  border: 0 none;
-  width: 440px;
-  height: 260px;
-  background: black;
-}
 #aboutus .flex-control-paging li a {
   background: #666666;
   box-shadow: none;
