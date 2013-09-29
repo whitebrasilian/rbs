@@ -2,170 +2,113 @@
 include("starter.php");
 include("header.php");
 ?>
+    <section id="feature_slider" class="lol">
+        <!-- 
+            Each slide is composed by <img> and .info
+            - .info's position is customized with css in index.css
+            - each <img> parallax effect is declared by the following params inside its class:
+            
+            example: class="asset left-472 sp600 t120 z3"
+            left-472 means left: -472px from the center
+            sp600 is speed transition
+            t120 is top to 120px
+            z3 is z-index to 3
+            Note: Maintain this order of params
 
-<section id="feature_slider" class="lol">
-    <!-- 
-        Each slide is composed by <img> and .info
-        - .info's position is customized with css in index.css
-        - each <img> parallax effect is declared by the following params inside its class:
-        
-        example: class="asset left-472 sp600 t120 z3"
-        left-472 means left: -472px from the center
-        sp600 is speed transition
-        t120 is top to 120px
-        z3 is z-index to 3
-        Note: Maintain this order of params
-
-        For the backgrounds, you can combine from the bgs folder :D
-    -->
-    <article class="slide" id="showcasing" style="background: url('img/backgrounds/landscape.png') repeat-x top center;">
-        <img class="asset left-30 sp600 t120 z1" src="img/slides/scene1/macbook.png" />
-        <div class="info">
-            <h2>Beautiful theme for showcasing your works.</h2>
-        </div>
-    </article>
-    <article class="slide" id="ideas" style="background: url('img/backgrounds/aqua.jpg') repeat-x top center;">
-        <div class="info">
-            <h2>We love to turn ideas into beautiful things.</h2>
-        </div>
-        <img class="asset left-480 sp600 t260 z1" src="img/slides/scene2/left.png" />
-        <img class="asset left-210 sp600 t213 z2" src="img/slides/scene2/middle.png" />
-        <img class="asset left60 sp600 t260 z1" src="img/slides/scene2/right.png" />
-    </article>
-    <article class="slide" id="tour" style="background: url('img/backgrounds/color-splash.jpg') repeat-x top center;">
-        <img class="asset left-472 sp650 t210 z3" src="img/slides/scene3/ipad.png" />
-        <img class="asset left-365 sp600 t270 z4" src="img/slides/scene3/iphone.png" />
-        <img class="asset left-350 sp450 t135 z2" src="img/slides/scene3/desktop.png" />
-        <img class="asset left-185 sp550 t220 z1" src="img/slides/scene3/macbook.png" />
-        <div class="info">
-            <h2>Fully Responsive theme</h2>
-            <a href="features.html">TOUR THE PRODUCT</a>
-        </div>
-    </article>
-    <article class="slide" id="responsive" style="background: url('img/backgrounds/indigo.jpg') repeat-x top center;">
-        <img class="asset left-472 sp600 t120 z3" src="img/slides/scene4/html5.png" />
-        <img class="asset left-190 sp500 t120 z2" src="img/slides/scene4/css3.png" />
-        <div class="info">
-            <h2>
-                Responsive <strong>HTML5 & CSS3</strong>
-                Theme
-            </h2>                
-        </div>
-    </article>        
-</section>
-
-<div id="showcase">
+            For the backgrounds, you can combine from the bgs folder :D
+        -->
+        <article class="slide" id="showcasing" style="background: url('img/backgrounds/africa1.jpg') repeat-x top center;">
+            <div class="info">
+                <h2>East Africa up close and personal</h2>
+            </div>
+        </article>
+        <article class="slide" id="ideas" style="background: url('img/backgrounds/africa2.jpg') repeat-x top center;">
+            <div class="info">
+                <h2>Everything in Africa bites, but the safari bug is worst of all</h2>
+            </div>
+        </article>
+        <article class="slide" id="tour" style="background: url('img/backgrounds/africa3.jpg') repeat-x top center;">
+            <div class="info">
+                <h2>I dream of an Africa which is in peace with itself</h2>
+            </div>
+        </article>
+        <article class="slide" id="responsive" style="background: url('img/backgrounds/africa4.jpg') repeat-x top center;">
+            <div class="info">
+                <h2>Always love a good cheetah moment</h2>                
+            </div>
+        </article>        
+    </section>
+    
+<div id="aboutus">
     <div class="container">
         <div class="section_header">
-            <h3>Our Services</h3>
-        </div>            
-        <div class="row feature_wrapper">
-            <!-- Features Row -->
-            <div class="features_op1_row">
-                <!-- Feature -->
-                <div class="col-sm-4 feature first">
-                    <div class="img_box">
-                        <a href="services.html">
-                            <img src="img/service1.png">
-                            <span class="circle"> 
-                                <span class="plus">&#43;</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="text">
-                        <h6>Responsive theme</h6>
-                        <p>
-                            There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                        </p>
-                    </div>
-                </div>
-                <!-- Feature -->
-                <div class="col-sm-4 feature">
-                    <div class="img_box">
-                        <a href="services.html">
-                            <img src="img/service2.png">
-                            <span class="circle"> 
-                                <span class="plus">&#43;</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="text">
-                        <h6>Easy customization</h6>
-                        <p>
-                            There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                        </p>
-                    </div>
-                </div>
-                <!-- Feature -->
-                <div class="col-sm-4 feature last">
-                    <div class="img_box">
-                        <a href="services.html">
-                            <img src="img/service3.png">
-                            <span class="circle"> 
-                                <span class="plus">&#43;</span>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="text">
-                        <h6>Made with love</h6>
-                        <p>
-                            There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                        </p>
-                    </div>
-                </div>
+            <h3>East Africa Up Close and Personal</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 intro">
+                <h6>Phasellus sed penatibus magna lacus et, turpis placerat ridiculus ut!</h6>
+                <p>
+                    Phasellus sed penatibus magna lacus et, turpis placerat ridiculus ut? Etiam ultrices? Lectus quis et, et, elementum ac ac lectus ultricies natoque ultrices lectus! Penatibus. Mauris! Porttitor porttitor lundium adipiscing, porttitor in, aliquam porta! Nascetur nunc ac ultricies platea rhoncus? Ut sed sagittis, penatibus augue, magna sed cursus montes nunc, elementum! Turpis nisi et, hac, ridiculus, proin massa nascetur rhoncus dolor mattis lectus natoque amet, parturient, et elementum sit lorem enim, placerat turpis in hac nunc eros sit integer natoque? Tincidunt hac cum turpis, diam amet adipiscing, phasellus vel augue urna est dapibus tempor ultricies placerat augue augue turpis? Nunc! Purus porta nunc proin mus mus! Odio duis diam nunc scelerisque sociis lorem habitasse, mid elit. Mid, in rhoncus mattis.
+                    <br /><br />
+                    Sit augue eu dis tortor? Cursus phasellus ultricies sit montes magna, placerat. Lectus nunc! Sit, magna integer. Placerat ac. Penatibus ac magna tempor turpis, cum elementum. Tortor risus diam! Sed ac augue lorem velit nunc duis sit et nunc. Risus lectus eros a vel. Amet nunc dignissim. Ut duis, amet pulvinar placerat integer amet nec augue tincidunt auctor a? Tincidunt odio sit augue nascetur nisi, ut porta placerat porttitor placerat massa. Enim, placerat dis sed arcu etiam velit ultrices, elementum aenean vut ut, porttitor vel sed proin, dictumst in? Nisi in! Nascetur elementum risus magna? Porttitor risus proin massa, placerat augue amet sagittis, pellentesque ac. Scelerisque porttitor dolor porttitor montes vel a pid phasellus ut arcu integer sagittis, dolor.
+                   </p>
             </div>
         </div>
     </div>
 </div>
 
-<div id="features">
+<div id="aboutus2">
     <div class="container">
         <div class="section_header">
-            <h3>Features</h3>
-        </div> 
-        <div class="row feature">
-            <div class="col-sm-6">
-                <img src="img/showcase1.png" class="img-responsive" />
-            </div>
-            <div class="col-sm-6 info">
-                <h3>
-                    <img src="img/features-ico1.png" />
-                    Beautiful on all devices
-                </h3>
-                <p>
-                    There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                </p>
-            </div>
+            <h3>Where We Go</h3>
         </div>
-        <div class="row feature">
-            <div class="col-sm-6 pic-right">
-                <img src="img/showcase2.png" class="pull-right img-responsive" />
-            </div>
-            <div class="col-sm-6 info info-left">
-                <h3>
-                    <img src="img/features-ico2.png" />
-                    Blog page included
-                </h3>
+        <div class="row">
+            <div class="col-sm-6 intro">
+                <h6>Phasellus sed penatibus magna lacus et!</h6>
                 <p>
-                    There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    Phasellus sed penatibus magna lacus et, turpis placerat ridiculus ut? Etiam ultrices? Lectus quis et, et, elementum ac ac lectus ultricies natoque ultrices lectus! Penatibus. Mauris! Porttitor porttitor lundium adipiscing, porttitor in, aliquam porta! Nascetur nunc ac ultricies platea rhoncus? Ut sed sagittis, penatibus augue, magna sed cursus montes nunc, elementum! Turpis nisi et, hac, ridiculus, proin massa nascetur rhoncus dolor mattis lectus natoque amet, parturient, et elementum sit lorem enim, placerat turpis in hac nunc eros sit integer natoque? Tincidunt hac cum turpis, diam amet adipiscing, phasellus vel augue urna est dapibus tempor ultricies placerat augue augue turpis? Nunc! Purus porta nunc proin mus mus! Odio duis diam nunc scelerisque sociis lorem habitasse, mid elit. Mid, in rhoncus mattis.
+                    <br /><br />
+                    Sit augue eu dis tortor? Cursus phasellus ultricies sit montes magna, placerat. Lectus nunc! Sit, magna integer. Placerat ac. Penatibus ac magna tempor turpis, cum elementum. Tortor risus diam! Sed ac augue lorem velit nunc duis sit et nunc. Risus lectus eros a vel. Amet nunc dignissim. Ut duis, amet pulvinar placerat integer amet nec augue tincidunt auctor a? Tincidunt odio sit augue nascetur nisi, ut porta placerat porttitor placerat massa. Enim, placerat dis sed arcu etiam velit ultrices, elementum aenean vut ut, porttitor vel sed proin, dictumst in? Nisi in! Nascetur elementum risus magna? Porttitor risus proin massa, placerat augue amet sagittis, pellentesque ac. Scelerisque porttitor dolor porttitor montes vel a pid phasellus ut arcu integer sagittis, dolor.
                 </p>
-            </div>                
-        </div>
-        <div class="row feature">
+            </div>
             <div class="col-sm-6">
-                <img src="img/showcase3.png" class="img-responsive" />
-            </div>
-            <div class="col-sm-6 info">
-                <h3>
-                    <img src="img/features-ico3.png" />
-                    Simple and clean coming soon page
-                </h3>
-                <p>
-                    There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                </p>
+
+                <div id="galleria" class="galleria">
+
+                    <?php
+                    $gallery = array(
+                    'African Hornbill1.jpg',
+                    'Better writing desk in Selous1.jpg',
+                    'Giraffe heads held high1.jpg',
+                    'Guest houses at Lewa Downs1.jpg',
+                    'IMG_3602.jpeg',
+                    'IMG_3703.jpeg',
+                    'Lunch time African style1.jpg'
+                    );
+
+                    for ($i=0; $i <count($gallery) ; $i++) { ?>
+
+                        <a  href="images/galleries/<?=$gallery[$i] ?>">
+                        <img src="images/galleries/<?=$gallery[$i] ?>">
+                        </a>
+
+                    <?php } ?>
+
+                </div>
+
+                <br><br>
+
+                <iframe width="440" height="315" src="//www.youtube.com/embed/n2s5ev0i8tM" frameborder="0" allowfullscreen></iframe>
+
             </div>
         </div>
     </div>
 </div>
 
-<?php include("$CFG->baseroot/footer.php"); ?>
+<div class="map">
+
+    <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/?ie=UTF8&amp;ll=64.089157,-21.816616&amp;spn=0.045157,0.15398&amp;t=m&amp;z=13&amp;output=embed"></iframe>
+
+</div>
+
+<?php include("footer.php"); ?>

@@ -94,11 +94,6 @@
                             </a>
                         </div>
                     </div>
-                    <div class="row copyright">
-                        <div class="col-md-12">
-                            © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
-                        </div>
-                    </div>
                 </div>            
             </div>
         </div>
@@ -109,19 +104,55 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/theme.js"></script>
 
-    <script type="text/javascript" src="js/index-slider.js"></script>	
+    <?php if ($index==1) { ?><script src="js/index-slider.js"></script><?php } ?>  
+    
+    <?php if ($index==1 || in_array('planning.php',$php_self_exploded) || in_array('history.php',$php_self_exploded)) { ?>
 
-    <?php if (in_array('blog-update.php',$php_self_exploded) || $_vars['page'] == "testimonials" || $_vars['page'] == "accommodations") { ?>
+        <!-- http://galleria.aino.se/ -->
+        <script src="js/galleria/galleria-1.2.9.min.js"></script>
+        <script type="text/javascript">
+        <!--
+        // Load the classic theme
+        Galleria.loadTheme('js/galleria/themes/twelve/galleria.twelve.min.js');
+        Galleria.run('#galleria');
+        //-->
 
-        <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
+        </script>
 
     <?php } ?>
 
-    <?php if ($_vars['page'] == "media-gallery") { ?>
+    <?php if (in_array('history.php',$php_self_exploded)) { ?>
 
-        <script type="text/javascript" src="<?= HOST ?>/js/custom-form-elements.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
 
-    <?php } ?>
+                var $container = $('#gallery_container'),
+                      $filters = $("#filters a");
+            
+                $container.imagesLoaded( function(){
+                    $container.isotope({
+                        itemSelector : '.photo',
+                        masonry: {
+                            columnWidth: 100
+                        }
+                    });
+                });
+
+                // filter items when filter link is clicked
+                $filters.click(function() {
+                    $filters.removeClass("active");
+                    $(this).addClass("active");
+                    var selector = $(this).data('filter');
+                    $container.isotope({ filter: selector });
+                    return false;
+                });
+            
+            
+            });
+        </script>
+       
+    <?php } ?>   
 
 </body>
 </html>

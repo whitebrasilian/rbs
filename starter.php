@@ -7,7 +7,7 @@ $CFG = new object;
 
 /* Load Base Vars */
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
-	$CFG->host = "/safari/www";
+	$CFG->host = "/riverbanksafaris.com/www";
 	$windir = "C:/apache2triad/htdocs/ImageMagick-6.5.3-Q16";
 	define("SECURE", $CFG->host);
 	define("MAPS_API", "ABQIAAAA6vv53gLa8mRn_rX6w2ea4RT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQsacPbWBoYV2AwcinPRcqadLAkYw");
@@ -154,4 +154,6 @@ if (!in_array('manager',$php_self_exploded) && is_array($_POST)) {
 	$_POST = $clean_post;
 
 }
+
+if (strpos($_SERVER['SCRIPT_NAME'], 'index.php') !== false) { $index = 1; }
 ?>
