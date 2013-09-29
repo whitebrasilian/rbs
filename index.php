@@ -41,9 +41,7 @@ include("header.php");
     
 <div id="aboutus">
     <div class="container">
-        <div class="section_header">
-            <h3>East Africa Up Close and Personal</h3>
-        </div>
+        <br>
         <div class="row">
             <div class="col-sm-12 intro">
                 <h6>Phasellus sed penatibus magna lacus et, turpis placerat ridiculus ut!</h6>

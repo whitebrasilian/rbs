@@ -11,6 +11,14 @@
 
 <link rel="shortcut icon" type="image/ico" href="favicon.ico">
 <link rev="Site name" href="http://www.<?= $SITE->URL ?>/" title="">
+
+<?php if (in_array('blog-update.php',$php_self_exploded)) { ?>
+
+	<link rel="stylesheet" type="text/css" href="http://jhollingworth.github.io/bootstrap-wysihtml5/lib/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="http://jhollingworth.github.io/bootstrap-wysihtml5/src/bootstrap-wysihtml5.css"></link>
+
+<?php } ?>
+
 <link rel="stylesheet" type="text/css" href="<?= HOST ?>/css/cms-style.css" media="all">
 
 <!--[if IE]>
@@ -23,7 +31,7 @@
     </style>
 <![endif]-->
 
-<script type="text/javascript" src="<?= HOST ?>/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <script type="text/javascript" src="<?= HOST ?>/js/php.js"></script>
 
@@ -37,13 +45,13 @@
 	<script type="text/javascript" src="<?= HOST ?>/standards/classes/uploadify/swfobject.js"></script>
 	<script type="text/javascript" src="<?= HOST ?>/standards/classes/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
 
-	<!-- http://galleria.aino.se/ -->
-	<script src="<?= HOST ?>/js/galleria/galleria-1.2.3.min.js"></script>
-	<script type="text/javascript">
-	<!--
-	// Load the classic theme
-	Galleria.loadTheme('<?= HOST ?>/js/galleria/themes/twelve/galleria.twelve.min.js');
-	//-->
+    <!-- http://galleria.aino.se/ -->
+    <script src="<?= HOST ?>/js/galleria/galleria-1.2.9.min.js"></script>
+    <script type="text/javascript">
+    <!--
+    // Load the classic theme
+    Galleria.loadTheme('<?= HOST ?>/js/galleria/themes/twelve/galleria.twelve.min.js');
+     //-->
 	</script>
 
 <?php } ?>

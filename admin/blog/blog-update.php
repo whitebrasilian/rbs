@@ -200,13 +200,9 @@ include($CFG->baseroot."/admin/cms-header.php");
 						<div class="field_copy">The is the main body copy. DO NOT copy & paste data without having pasted it into a notepad editor first. If this warning is not followed the page will look really messed up! Images inserted into post MUST BE resized before adding.</div>
 
 						<div class="field_box">
-							<!--<textarea name="content" class="normal wysiwyg" style="height:350px;" tabindex=<?php pv($ti); $ti++; ?>><?= $dbq['content'] ?></textarea>-->
+							<!--<textarea name="content" class="normal wysiwyg" style="height:350px;" tabindex=<?php pv($ti); $ti++; ?>><?//= $dbq['content'] ?></textarea>-->
 
-							<?php
-							include("../../standards/spaw2/spaw.inc.php");
-							$spaw1 = new SpawEditor("content", prep_var($dbq['content']));
-							$spaw1->show();
-							?>
+							<textarea class="normal textarea" name="content" placeholder="Enter text ..." style="width: 590px; height: 300px"><?= $dbq['content'] ?></textarea>
 
 						</div>
 

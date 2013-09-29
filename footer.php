@@ -74,7 +74,7 @@
 
     <?php if ($index==1) { ?><script src="js/index-slider.js"></script><?php } ?>  
     
-    <?php if ($index==1 || in_array('planning.php',$php_self_exploded) || in_array('history.php',$php_self_exploded)) { ?>
+    <?php if ($index==1 || in_array('planning.php',$php_self_exploded) || in_array('history.php',$php_self_exploded) || in_array('blog-post.php',$php_self_exploded)) { ?>
 
         <!-- http://galleria.aino.se/ -->
         <script src="js/galleria/galleria-1.2.9.min.js"></script>
@@ -82,7 +82,7 @@
         <!--
         // Load the classic theme
         Galleria.loadTheme('js/galleria/themes/twelve/galleria.twelve.min.js');
-        Galleria.run('#galleria');
+        Galleria.run('#galleria', { });
         //-->
 
         </script>

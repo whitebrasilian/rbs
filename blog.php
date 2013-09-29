@@ -74,7 +74,13 @@ include("header.php");
                 <div class="post">
                     <div class="img">
                         <a href="blog-post.php?p=<?= $qdc['id'] ?>">
-                            <img src="img/blog1.png" alt="" class="img-responsive" />
+
+                            <?php
+                            $_dbq = db_query("SELECT lrg_rename FROM upload WHERE gallery_id = '".$qdc['gallery_id']."' ORDER BY upload_id ASC limit 1");
+                            $dbq = db_fetch_assoc($_dbq); ?>
+
+                            <img title="" alt="" src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>" style="width:293px;" class="img-responsive"/>
+
                         </a>
                     </div>
                     <div class="text">

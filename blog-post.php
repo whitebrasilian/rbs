@@ -34,18 +34,68 @@ include("header.php");
             ?>   
 
             <div class="col-sm-8">
-                <img class="post_pic img-responsive" src="img/blog_post.jpg" />
+                <!--<img class="post_pic img-responsive" src="img/blog_post.jpg" />-->
+
+                <?php
+                if (!is_empty($qdc['video_id'])) {
+
+                    $_qdy = db_query("SELECT embed_code FROM videos WHERE id = '".$qdc['video_id']."' limit 1");
+                    $qdy = db_fetch_assoc($_qdy);
+                    ?>
+                    <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+                        <iframe class="post_pic" width="617" height="383" src="http://www.youtube.com/embed/<?= $qdy['embed_code'] ?>?wmode=opaque" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                <?php
+                }
+
+                if (!is_empty($qdc['gallery_id']) && is_empty($qdc['video_id'])) { ?>
+
+                    <div id="galleria" class="post_pic" style="width:617px; height:387px;">
+
+                        <?php
+                        $_dbq = db_query("SELECT * FROM upload WHERE gallery_id = '".$qdc['gallery_id']."'");
+                        while($dbq = db_fetch_assoc($_dbq)){ ?>
+
+                            <a href="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
+                                <img
+                                    title=""
+                                    alt=""
+                                    src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
+                            </a>
+
+                        <?php } ?>
+
+                    </div>
+
+                <?php } ?>
+
 
                 <div class="post_content">
                     <h2><?= $qdc['title'] ?></h2>
-                    <span class="date"><?= formatDateLong2($qdc['datetime']) ?></span>
+                    <span class="date">Posted by <a href="<?= $CFG->host ?>/blog/?a=<?= urlencode($qdc['author']) ?>"><?= $qdc['author'] ?></a> on <?= formatDateLong2($qdc['datetime']) ?></span>
                     
                     <?php echo prep_var($qdc['content']); ?>
                     
-                    <div class="author_box">
-                        <div class="author"><?= $qdc['author'] ?></div>
-                        <!--<div class="area">Creative Director</div>-->
-                    </div>
+                    <?php if (!is_empty($qdc['video_id']) && !is_empty($qdc['gallery_id'])) { ?>
+
+                        <br><br><br>
+
+                        <div id="galleria" style="max-width:617px; height:387px;">
+
+                            <?php
+                            $_dbq = db_query("SELECT * FROM upload WHERE gallery_id = '".$qdc['gallery_id']."'");
+                            while($dbq = db_fetch_assoc($_dbq)){ ?>
+
+                                <a href="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
+                                    <img title="" alt="" src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>">
+                                </a>
+
+                            <?php } ?>
+
+                        </div>
+
+                    <?php } ?>
+
                 </div>
 
             </div>
@@ -64,7 +114,15 @@ include("header.php");
 
                             <div class="recent">
                                 <span>
-                                    <a href="<?= $CFG->host ?>/blog-post.php?p=<?= $sec['id'] ?>"><img src="img/recent_photos.jpg" alt=""></a>
+                                    <a href="<?= $CFG->host ?>/blog-post.php?p=<?= $sec['id'] ?>">
+
+                                        <?php
+                                        $_dbq = db_query("SELECT lrg_rename FROM upload WHERE gallery_id = '".$qdc['gallery_id']."' ORDER BY upload_id ASC limit 1");
+                                        $dbq = db_fetch_assoc($_dbq); ?>
+
+                                        <img title="" alt="" src="<?= HOST ?>/images/galleries/<?= $dbq['lrg_rename'] ?>" style="width:55px;" class="img-responsive">
+
+                                    </a>
                                 </span>
                                 <p><a href="<?= $CFG->host ?>/blog-post.php?p=<?= $sec['id'] ?>"><?= $sec['title'] ?></a></p>
                             </div>
