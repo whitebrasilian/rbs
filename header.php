@@ -8,7 +8,7 @@
     <link rev="Site name" href="http://www.riverbanksafaris.com/" title="">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/compiled/bootstrap-overrides.css" />
     <link rel="stylesheet" type="text/css" href="css/compiled/theme.css" />
 
@@ -32,6 +32,32 @@
 </head>
 <body <?php if ($index==1) { ?> class="pull_top"<?php } ?>>
 
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              Content for the dialog / modal goes here.
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Close</a>
+              <a href="#" class="btn btn-primary">Save changes</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="mail-sent" class="alertbox" style="display:none;" onclick="$(this).fadeOut(500);">
+        Your message has been sent. We will be contacting you very soon. Thank you!
+        <br><br>
+
+        <small>(click to close)</small>
+    </div>
+
+
     <div class="navbar navbar-inverse <?php if ($index==1) { echo"navbar-fixed-top"; }else{ echo"navbar-static-top"; } ?>" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -41,7 +67,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand"><strong>RIVERBANK SAFARIS</strong></a>
+                <a href="index.php" class="navbar-brand"><strong>RIVERBANK SAFARIS</strong></a>
             </div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">

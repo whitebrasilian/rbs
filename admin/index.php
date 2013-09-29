@@ -12,7 +12,7 @@ if (!is_empty($_vars['password'])) {
 
 	//pre($_SESSION['user']);
 
-	$qid = db_query("SELECT * FROM users WHERE username = 'admin' AND password = '".md5($_vars['password'])."' limit 1",0,0);
+	$qid = db_query("SELECT * FROM users WHERE priv = 'admin' AND password = '".md5($_vars['password'])."' limit 1",0,0);
 	$user = db_fetch_assoc($qid);
 
 	if (is_array($user)) {

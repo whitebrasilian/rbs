@@ -6,28 +6,25 @@
                     <h3 class="footer_header">
                         Recent Posts
                     </h3>
-                    <div class="post">
-                        <a href="blogpost.html">
-                            <img src="img/recent_post1.png" class="img-circle" />
-                        </a>
-                        <div class="date">
-                            Wed, 12 Dec
+
+                    <?php
+                    $_sec = db_query("SELECT id, title, datetime FROM blog WHERE status = 'show' ORDER BY datetime DESC limit 3");
+                    while($sec = db_fetch_assoc($_sec)){ ?>
+
+                        <div class="post">
+                            <a href="<?= $CFG->host ?>/blog-post.php?p=<?= $sec['id'] ?>">
+                                <img src="img/recent_post1.png" class="img-circle" />
+                            </a>
+                            <div class="date">
+                                <?= formatDateLong2($sec['datetime']) ?>
+                            </div>
+                            <a href="<?= $CFG->host ?>/blog-post.php?p=<?= $sec['id'] ?>" class="title">
+                                <?= $sec['title'] ?>
+                            </a>
                         </div>
-                        <a href="blogpost.html" class="title">
-                            Randomised words which don't look embarrasing hidden.
-                        </a>
-                    </div>
-                    <div class="post">
-                        <a href="blogpost.html">
-                            <img src="img/recent_post2.png" class="img-circle" />
-                        </a>
-                        <div class="date">
-                            Mon, 12 Dec
-                        </div>
-                        <a href="blogpost.html" class="title">
-                            Randomised words which don't look embarrasing hidden.
-                        </a>
-                    </div>
+
+                    <?php } ?>
+
                 </div>
                 <div class="col-sm-4 testimonials">
                     <h3 class="footer_header">
@@ -53,47 +50,18 @@
                         Contact
                     </h3>
                     <form action="#" method="post">
-                        <input type="text" placeholder="Your name" />
-                        <input type="text" placeholder="Your email" />
-                        <textarea rows="3" placeholder="Message"></textarea>
+                        <input type="text" id="name" placeholder="Your Nname" />
+                        <input type="text" id="email" placeholder="Your Email" />
+                        <input type="text" id="phone" placeholder="Your Phone" />
+                        <textarea rows="6" id="body" placeholder="Message"></textarea>
                         <input type="submit" value="Send" />
                     </form>
+                    <br><br>
                 </div>
             </div>
             <div class="row credits">
                 <div class="col-md-12">
-                    <div class="row social">
-                        <div class="col-md-12">
-                            <a href="#" class="facebook">
-                                <span class="socialicons ico1"></span>
-                                <span class="socialicons_h ico1h"></span>
-                            </a>
-                            <a href="#" class="twitter">
-                                <span class="socialicons ico2"></span>
-                                <span class="socialicons_h ico2h"></span>
-                            </a>
-                            <a href="#" class="gplus">
-                                <span class="socialicons ico3"></span>
-                                <span class="socialicons_h ico3h"></span>
-                            </a>
-                            <a href="#" class="flickr">
-                                <span class="socialicons ico4"></span>
-                                <span class="socialicons_h ico4h"></span>
-                            </a>
-                            <a href="#" class="pinterest">
-                                <span class="socialicons ico5"></span>
-                                <span class="socialicons_h ico5h"></span>
-                            </a>
-                            <a href="#" class="dribble">
-                                <span class="socialicons ico6"></span>
-                                <span class="socialicons_h ico6h"></span>
-                            </a>
-                            <a href="#" class="behance">
-                                <span class="socialicons ico7"></span>
-                                <span class="socialicons_h ico7h"></span>
-                            </a>
-                        </div>
-                    </div>
+                    <div class="row social"></div>
                 </div>            
             </div>
         </div>
@@ -153,6 +121,45 @@
         </script>
        
     <?php } ?>   
+
+    <script type="text/javascript">
+    <!--
+    function sendMail() {
+
+        var name            = $('#name').val();
+        var email           = $('#email').val();
+        var phone           = $('#phone').val();
+        var body            = $('#body').val();
+
+        $.ajax({
+            type: "POST",
+            url: "standards/ajax.php",
+            data: 'name=' + name + '&email=' + email + '&phone=' + phone + '&body=' + body,
+            success: function(msg){
+
+                if (msg==1){
+                    $('#myModal').modal({show:true})
+                    $('#body').val('');
+                }
+
+            }
+        });
+
+        return false;
+
+    }
+
+    $(function(){
+
+        $("form").submit(function(e){
+            sendMail();
+            e.preventDefault(e);
+        });
+
+    });
+
+    //-->
+    </script>
 
 </body>
 </html>

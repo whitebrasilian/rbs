@@ -32,7 +32,7 @@ include("header.php");
 
                     for ($i=0; $i <count($gallery) ; $i++) { ?>
 
-                        <a  href="images/galleries/<?=$gallery[$i] ?>">
+                        <a href="images/galleries/<?=$gallery[$i] ?>">
                         <img src="images/galleries/<?=$gallery[$i] ?>">
                         </a>
 

@@ -23,8 +23,6 @@ if (!is_empty($_POST['remove'])) {
 	<p>Phone - ".$_vars['phone']."</p>
 	";
 
-	if (!is_empty($_vars['trip_dates'])) { $message .= "<p>Trip Dates - ".$_vars['trip_dates']."</p>"; }
-
 	$message .= "
 	<p>Message - ".$_vars['body']."</p>
 	";
@@ -32,8 +30,7 @@ if (!is_empty($_POST['remove'])) {
 	//clear out slashes from php
 	$body = stripslashes($message);
 
-	if (!is_empty($_vars['trip_dates'])) { $subject =  "Book Now Form Submission"; }
-	else { $subject =  "Contact Form Submission"; }
+	$subject =  "Contact Form Submission";
 
 	$headers  = "MIME-Version: 1.0\n";
 	$headers .= "Content-type: text/html; charset=iso-8859-1\n";
@@ -42,7 +39,7 @@ if (!is_empty($_POST['remove'])) {
 	$headers .= "X-Mailer: PHP"."\n";
 
 	// send mail to customer
-	if(mail("branham@royalwolf.com", $subject, $body, $headers)){
+	if(mail("cesar@cesarvillaca.com", $subject, $body, $headers)){
 		echo 1;
 	}
 

@@ -51,7 +51,7 @@ include("header.php");
     </div>
 </div>
 
-<div id="aboutus2">
+<div id="aboutus">
     <div class="container">
         <div class="section_header">
             <h3>Plan Your Trip</h3>

@@ -2,7 +2,7 @@ Options +FollowSymLinks
 Options +Indexes
 RewriteEngine On
 #RewriteBase /
-RewriteBase /safari/www/ 
+RewriteBase /riverbanksafaris.com/www/ 
 
 AddType application/x-httpd-php .html
 

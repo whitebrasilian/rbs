@@ -995,7 +995,7 @@ function formatDateLong2($val)
 	$arr = explode("-", $val);
 	$arr2 = explode(" ",$arr[2]);
 	$arr3 = explode(":",$arr2[1]);
-	return date("M j, Y g:i a", mktime($arr3[0], $arr3[1], $arr3[2], $arr[1], $arr[2], $arr[0]));
+	return date("D, j M. Y", mktime($arr3[0], $arr3[1], $arr3[2], $arr[1], $arr[2], $arr[0]));
 }
 
 function setdefault(&$var, $default="")

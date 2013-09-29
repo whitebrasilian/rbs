@@ -16,15 +16,15 @@
 
 			<a href="<?= $CFG->host ?>/admin/users/" class="">Members</a><br>
 
+			<a href="<?= $CFG->host ?>/admin/pages/" class="">Pages</a><br>
+
+			<!--<a href="<?= $CFG->host ?>/admin/galleries/" class="">Image Galleries</a><br>
+			<a href="<?= $CFG->host ?>/admin/videos/" class="">Videos</a><br>-->
+			<a href="<?= $CFG->host ?>/admin/testimonials/" class="">Testimonials</a><br>
+
 		<?php } ?>
 
-		<a href="<?= $CFG->host ?>/admin/pages/" class="">Pages</a><br>
-		<a href="<?= $CFG->host ?>/admin/galleries/" class="">Image Galleries</a><br>
-		<a href="<?= $CFG->host ?>/admin/videos/" class="">Videos</a><br>
 		<a href="<?= $CFG->host ?>/admin/blog/" class="">Blog</a><br>
-		<a href="<?= $CFG->host ?>/admin/testimonials/" class="">Testimonials</a><br>
-		<a href="<?= $CFG->host ?>/admin/guides/" class="">Guides</a><br>
-		<!--<a href="" class=""><strike>Video Tutorials</strike></a><br>-->
 		<br>
 		<a href="<?= $CFG->host ?>/logout.php">Logout</a>
 
