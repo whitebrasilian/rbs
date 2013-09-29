@@ -1,0 +1,32 @@
+Options +FollowSymLinks
+Options +Indexes
+RewriteEngine On
+#RewriteBase /
+RewriteBase /riverbanksafaris.com/www/ 
+
+AddType application/x-httpd-php .html
+
+###   Redirect all non-www urls to www version - 07/27/2010
+#RewriteCond %{SERVER_PORT} ^80$
+#RewriteCond %{HTTP_HOST} !^www\.[a-z-]+\.[a-z]{2,6} [NC] 
+#RewriteCond %{HTTP_HOST} ^([a-zA-Z0-9_-]+)\.([a-zA-Z0-9_-]+) 
+#RewriteRule ^(.*)$ http://www.%0/$1 [R=301,L]
+
+###   redirect /index.php to root - http://www.ragepank.com/redirect-check/ - 5/6/2011
+RewriteCond %{THE_REQUEST} ^.*/index\.php
+#RewriteRule ^(.*)index.php$ http://www.safari.com/$1 [R=301,L] 
+RewriteRule ^index\.htm index.php [R=301,L] 
+RewriteRule ^index\.html index.php [R=301,L] 
+RewriteRule ^index\.shtml index.php [R=301,L] 
+RewriteRule ^index\.asp index.php [R=301,L] 
+RewriteRule ^index\.aspx index.php [R=301,L] 
+RewriteRule ^index\.cfm index.php [R=301,L] 
+RewriteRule ^index\.pl index.php [R=301,L] 
+RewriteRule ^default\.htm index.php [R=301,L]
+RewriteRule ^default\.html index.php [R=301,L] 
+RewriteRule ^default\.asp index.php [R=301,L] 
+
+###   Mod Rewrite for all product urls
+RewriteCond %{REQUEST_URI}  !^/demo
+RewriteCond %{REQUEST_URI}  !^/admin
+RewriteRule ^([^/\.]+)/?$ index.php?page=$1&%{QUERY_STRING} [L]
