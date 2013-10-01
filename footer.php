@@ -93,7 +93,7 @@
         </script>
 
     <?php } ?>
-
+    
     <?php if (in_array('history.php',$php_self_exploded)) { ?>
 
         <script src="js/jquery.isotope.min.js"></script>

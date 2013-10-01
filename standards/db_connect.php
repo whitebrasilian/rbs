@@ -9,9 +9,9 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 }else{
 
 	$CFG->dbhost = "localhost";
-	$CFG->dbname = "royalwol";
-	$CFG->dbuser = "royalwol";
-	$CFG->dbpass = "zxcv123"; //Thats a 10
+	$CFG->dbname = "riverban";
+	$CFG->dbuser = "riverban";
+	$CFG->dbpass = "2442a3zS"; //Thats a 10
 
 }
 ?>

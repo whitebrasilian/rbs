@@ -4,6 +4,32 @@
 
 </div>
 
+<?php if (in_array('galleries-update.php',$php_self_exploded)) { ?>
+
+    <script type="text/javascript">
+    <!--
+    function remove(id) {
+
+        $.ajax({
+            type: "POST",
+            url: "../../standards/ajax.php",
+            data: 'remove=' + id,
+            success: function(msg){
+
+                $("#line-" + id).remove();
+
+            }
+        });
+
+        return false;
+
+    }
+    //-->
+    </script>
+
+<?php } ?>
+
+
 <?php if (in_array('blog-update.php',$php_self_exploded)) { ?>
 
 	<!-- http://docs.jquery.com/Plugins/autocomplete -->

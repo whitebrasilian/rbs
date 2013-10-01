@@ -606,7 +606,7 @@ function is_accepted(){
 	$frx = db_fetch_object($qix);
 	if($frx->priv == "priv"){
 		unset($_SESSION["user"]);
-		redirect("$CFG->host/members/login.php?priv=$frx->priv&email=$frx->email");
+		redirect("$CFG->host/admin/?priv=$frx->priv&email=$frx->email");
 		}
 }
 
@@ -636,7 +636,7 @@ function require_login()
 	//pre($_SERVER); die;
 	if (! is_logged_in()) {
 		//$_SESSION["wantsurl"] = $_SERVER["PHP_SELF"];
-		header("Location:$CFG->host/members/login.php");
+		header("Location:$CFG->host/admin/");
 		die;
 	}
 }
@@ -647,7 +647,7 @@ function require_priv($priv)
 /* Checks to see if the user has the privilege $priv.  if not, will display the Insufficient Privileges page and stop */
 	global $CFG, $_SESSION;
 	if ($_SESSION["user"]["priv"] != $priv) {
-		header("Location:".$CFG->host."/members/login.php");
+		header("Location:".$CFG->host."/admin/");
 		die;
 	}
 }
